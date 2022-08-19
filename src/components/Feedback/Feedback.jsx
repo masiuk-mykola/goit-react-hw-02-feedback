@@ -10,45 +10,8 @@ export class Feedback extends Component {
     neutral: 0,
     bad: 0,
   };
-  // addGoodFeedback = e => {
-  //   this.setState(prevState => ({
-  //     good: prevState.good + 1,
-  //   }));
-  // };
-  // addNeutralFeedback = e => {
-  //   this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  //   }));
-  // };
-  // addBadFeedback = e => {
-  //   this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  //   }));
-  // };
 
-  addFeedback = e => {
-    switch (e.target.textContent) {
-      case 'Good':
-        this.setState(prevState => ({
-          good: prevState.good + 1,
-        }));
-        break;
-      case 'Neutral':
-        this.setState(prevState => ({
-          neutral: prevState.neutral + 1,
-        }));
-        break;
-      case 'Bad':
-        this.setState(prevState => ({
-          bad: prevState.bad + 1,
-        }));
-        break;
-      default:
-        break;
-    }
-  };
-
-  abc = item => {
+  addFeedback = item => {
     this.setState(prevState => ({
       [item]: prevState[item] + 1,
     }));
@@ -75,7 +38,7 @@ export class Feedback extends Component {
         <Section title={'Please leave your feedback'}>
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={this.abc}
+            onLeaveFeedback={this.addFeedback}
           />
         </Section>
 
